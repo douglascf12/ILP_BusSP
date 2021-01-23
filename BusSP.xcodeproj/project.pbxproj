@@ -9,11 +9,9 @@
 /* Begin PBXBuildFile section */
 		A3514A9924C0CBD700F3D8AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3514A9824C0CBD700F3D8AC /* AppDelegate.swift */; };
 		A3514A9B24C0CBD700F3D8AC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3514A9A24C0CBD700F3D8AC /* SceneDelegate.swift */; };
-		A3514A9D24C0CBD700F3D8AC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3514A9C24C0CBD700F3D8AC /* ViewController.swift */; };
 		A3514AA024C0CBD700F3D8AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3514A9E24C0CBD700F3D8AC /* Main.storyboard */; };
 		A3514AA224C0CBD800F3D8AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3514AA124C0CBD800F3D8AC /* Assets.xcassets */; };
 		A3514AA524C0CBD800F3D8AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3514AA324C0CBD800F3D8AC /* LaunchScreen.storyboard */; };
-		A3514AB324C0E30900F3D8AC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3514AB224C0E30900F3D8AC /* MainViewController.swift */; };
 		A3514AB524C0F04B00F3D8AC /* BusesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3514AB424C0F04B00F3D8AC /* BusesTableViewController.swift */; };
 		A3514AB724C10DA200F3D8AC /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3514AB624C10DA200F3D8AC /* MapViewController.swift */; };
 		A3514AB924C1216800F3D8AC /* Bus.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3514AB824C1216800F3D8AC /* Bus.swift */; };
@@ -28,12 +26,10 @@
 		A3514A9524C0CBD700F3D8AC /* BusSP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BusSP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3514A9824C0CBD700F3D8AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A3514A9A24C0CBD700F3D8AC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A3514A9C24C0CBD700F3D8AC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A3514A9F24C0CBD700F3D8AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A3514AA124C0CBD800F3D8AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A3514AA424C0CBD800F3D8AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A3514AA624C0CBD800F3D8AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A3514AB224C0E30900F3D8AC /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		A3514AB424C0F04B00F3D8AC /* BusesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusesTableViewController.swift; sourceTree = "<group>"; };
 		A3514AB624C10DA200F3D8AC /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		A3514AB824C1216800F3D8AC /* Bus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bus.swift; sourceTree = "<group>"; };
@@ -76,7 +72,6 @@
 			children = (
 				A3514A9824C0CBD700F3D8AC /* AppDelegate.swift */,
 				A3514A9A24C0CBD700F3D8AC /* SceneDelegate.swift */,
-				A3514A9C24C0CBD700F3D8AC /* ViewController.swift */,
 				A3514A9E24C0CBD700F3D8AC /* Main.storyboard */,
 				A3F3838F24C25D4D00D0B9BE /* BusTableViewCell.swift */,
 				A3514AB624C10DA200F3D8AC /* MapViewController.swift */,
@@ -86,7 +81,6 @@
 				A3D0D8C924C9F08F008EB429 /* BusPosition.swift */,
 				A3D0D8CB24C9F0CB008EB429 /* Location.swift */,
 				A3514ABA24C1219800F3D8AC /* SPTransOlhoVivo.swift */,
-				A3514AB224C0E30900F3D8AC /* MainViewController.swift */,
 				A3514AA124C0CBD800F3D8AC /* Assets.xcassets */,
 				A3514AA324C0CBD800F3D8AC /* LaunchScreen.storyboard */,
 				A3514AA624C0CBD800F3D8AC /* Info.plist */,
@@ -168,7 +162,6 @@
 				A3514AB924C1216800F3D8AC /* Bus.swift in Sources */,
 				A35F89B724C69D1A000A1931 /* BusAnnotation.swift in Sources */,
 				A3514ABB24C1219800F3D8AC /* SPTransOlhoVivo.swift in Sources */,
-				A3514A9D24C0CBD700F3D8AC /* ViewController.swift in Sources */,
 				A3F3839024C25D4D00D0B9BE /* BusTableViewCell.swift in Sources */,
 				A3514AB724C10DA200F3D8AC /* MapViewController.swift in Sources */,
 				A3D0D8CC24C9F0CB008EB429 /* Location.swift in Sources */,
@@ -176,7 +169,6 @@
 				A3514A9924C0CBD700F3D8AC /* AppDelegate.swift in Sources */,
 				A3514A9B24C0CBD700F3D8AC /* SceneDelegate.swift in Sources */,
 				A3514AB524C0F04B00F3D8AC /* BusesTableViewController.swift in Sources */,
-				A3514AB324C0E30900F3D8AC /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

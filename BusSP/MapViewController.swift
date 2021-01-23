@@ -38,12 +38,9 @@ class MapViewController: UIViewController {
         mapView.mapType = .mutedStandard
         mapView.delegate = self
         locationManager.delegate = self
-        
-        loadBusesInMap()
-        
+        loadBusesInMap("\(bus.cl)")
         configureLocationButton()
         requestUserLocationAuthorization()
-        
     }
     
     func loadBusesInMap(_ termosBusca: String = "") {
@@ -52,6 +49,8 @@ class MapViewController: UIViewController {
                 SPTransOlhoVivo.posicaoDosVeiculos(self.bus.cl, onComplete: { (busPositions) in
                     self.busPositions = busPositions
                     let count = self.busPositions!.vs.count
+                    print(self.busPositions!.vs.count)
+                    print("passei aqui")
                     var i = 0
                     while i < count {
                         self.addToMap(self.busPositions!.vs[i])
@@ -63,36 +62,6 @@ class MapViewController: UIViewController {
             }
         }
     }
-    
-//    func desenhar() {
-//        //Desenhar linha no mapa
-//        if CLLocationManager.authorizationStatus() !=  .authorizedWhenInUse {
-//            showAlert(type: .authorizationWarning)
-//            return
-//        }
-//
-//        let request = MKDirections.Request()
-//        request.destination = MKMapItem(placemark: MKPlacemark(coordinate: self.locBus.first!.coordinate))
-//        request.source = MKMapItem(placemark: MKPlacemark(coordinate: self.locBus.last!.coordinate))
-//        let directions = MKDirections(request: request)
-//        directions.calculate { (response, error) in
-//            if error == nil {
-//                if let response = response {
-//                    //self.mapView.removeOverlay(self.mapView.overlays as! MKOverlay)
-//
-//                    let route = response.routes.first
-//
-//                    self.mapView.addOverlay(route!.polyline, level: .aboveRoads)
-//                    var annotations = self.mapView.annotations.filter({($0 is Location)})
-//                    //annotations.append(self.selectedAnnotation as! MKAnnotation)
-//                    self.mapView.showAnnotations(annotations, animated: true)
-//
-//                }
-//            } else {
-//                self.showAlert(type: .routeError)
-//            }
-//        }
-//    }
     
     func configureLocationButton() {
         btUserLocation = MKUserTrackingButton(mapView: mapView)
@@ -126,6 +95,8 @@ class MapViewController: UIViewController {
                     locationManager.requestWhenInUseAuthorization()
                 case .restricted:
                     break
+                @unknown default:
+                    print("@unknown default")
             }
         } else {
             //Não dá
@@ -182,18 +153,6 @@ extension MapViewController: MKMapViewDelegate {
         selectedAnnotation = (view.annotation as! BusAnnotation)
         showInfo()
     }
-    
-//    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-//        if overlay is MKPolyline {
-//            let renderer = MKPolylineRenderer(overlay: overlay)
-//            renderer.strokeColor = UIColor(named: "main")?.withAlphaComponent(0.8)
-//            renderer.lineWidth = 5.0
-//            return renderer
-//        }
-//        return MKOverlayRenderer(overlay: overlay)
-//    }
-    
-    
     
 }
 

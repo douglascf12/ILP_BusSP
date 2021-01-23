@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qbV-8a-ZoW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qbV-8a-ZoW">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -15,11 +17,11 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="fFd-1J-3xh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="qWP-CQ-u23">
                             <rect key="frame" x="0.0" y="146" width="414" height="0.0"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" textLabel="V1b-qY-ztQ" detailTextLabel="iti-MM-nIZ" imageView="bRz-Mf-lDY" rowHeight="90" style="IBUITableViewCellStyleSubtitle" id="upu-l6-VDm" customClass="BusTableViewCell" customModule="BusSP" customModuleProvider="target">
@@ -61,7 +63,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="BusSP" id="9ZQ-1P-UEm">
-                        <barButtonItem key="backBarButtonItem" title=" " id="F7x-Q8-gw2"/>
+                        <barButtonItem key="backBarButtonItem" title="Pesquisar" id="F7x-Q8-gw2" userLabel="&lt; Pesquisar"/>
                     </navigationItem>
                     <connections>
                         <segue destination="2Zg-CT-pGd" kind="show" identifier="mapSegue" id="DjX-A0-4gj"/>
@@ -87,10 +89,10 @@
                                 <rect key="frame" x="10" y="98" width="394" height="754"/>
                                 <subviews>
                                     <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="fEZ-E3-pok">
-                                        <rect key="frame" x="0.0" y="0.0" width="394" height="588"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="648"/>
                                     </mapView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xy7-lR-8MS">
-                                        <rect key="frame" x="0.0" y="594" width="394" height="160"/>
+                                        <rect key="frame" x="0.0" y="654" width="394" height="100"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome da linha" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="qHh-n5-tVQ">
                                                 <rect key="frame" x="12" y="12" width="370" height="26.5"/>
@@ -115,7 +117,7 @@
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="tZk-Vh-n8t" secondAttribute="trailing" constant="12" id="1jn-zi-Ku6"/>
                                             <constraint firstItem="tZk-Vh-n8t" firstAttribute="leading" secondItem="xy7-lR-8MS" secondAttribute="leading" constant="12" id="Cd4-MX-Hr7"/>
-                                            <constraint firstAttribute="height" constant="160" id="DWn-1d-bdB"/>
+                                            <constraint firstAttribute="height" constant="100" id="DWn-1d-bdB"/>
                                             <constraint firstItem="qHh-n5-tVQ" firstAttribute="top" secondItem="xy7-lR-8MS" secondAttribute="top" constant="12" id="Da8-M6-4i6"/>
                                             <constraint firstItem="qHh-n5-tVQ" firstAttribute="leading" secondItem="xy7-lR-8MS" secondAttribute="leading" constant="12" id="Iyo-l8-BPR"/>
                                             <constraint firstItem="tZk-Vh-n8t" firstAttribute="top" secondItem="qHh-n5-tVQ" secondAttribute="bottom" constant="4" id="Jq9-yU-XPD"/>
@@ -132,7 +134,8 @@
                                 <color key="color" name="main"/>
                             </activityIndicatorView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Yqg-SD-xdT"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="kr8-lv-Rxt" firstAttribute="leading" secondItem="Yqg-SD-xdT" secondAttribute="leading" constant="10" id="3Gu-5j-txu"/>
                             <constraint firstItem="Yqg-SD-xdT" firstAttribute="trailing" secondItem="kr8-lv-Rxt" secondAttribute="trailing" constant="10" id="9h0-XU-X5E"/>
@@ -145,7 +148,6 @@
                             <constraint firstItem="Yqg-SD-xdT" firstAttribute="bottom" secondItem="kr8-lv-Rxt" secondAttribute="bottom" constant="10" id="ssP-Vc-XNv"/>
                             <constraint firstItem="sGs-Cv-oWa" firstAttribute="leading" secondItem="Yqg-SD-xdT" secondAttribute="leading" id="w2U-OS-ZDX"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Yqg-SD-xdT"/>
                     </view>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="VHa-X4-iuS" userLabel="testeteste"/>
                     <connections>
@@ -159,7 +161,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Esv-my-0Ng" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1553.6231884057972" y="-44.196428571428569"/>
+            <point key="canvasLocation" x="1299" y="-44"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="utr-QL-5HH">
@@ -176,7 +178,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UhZ-Hq-lz8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-322" y="-43"/>
+            <point key="canvasLocation" x="-122" y="-44"/>
         </scene>
     </scenes>
     <resources>
@@ -184,5 +186,8 @@
         <namedColor name="main">
             <color red="0.46700000762939453" green="0.71399998664855957" blue="0.96100002527236938" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
