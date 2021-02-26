@@ -22,7 +22,6 @@ class BusesTableViewController: UITableViewController {
         searchController.searchBar.barTintColor = .white
         searchController.searchBar.placeholder = "Prefixo ou nome da linha"
         navigationItem.searchController = searchController
-
         searchController.searchBar.delegate = self
         
         loadBuses()

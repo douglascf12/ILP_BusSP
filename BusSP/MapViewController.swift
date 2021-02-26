@@ -31,29 +31,59 @@ class MapViewController: UIViewController {
     lazy var locationManager = CLLocationManager()
     var btUserLocation: MKUserTrackingButton!
     var selectedAnnotation: BusAnnotation?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         viInfo.isHidden = true
         mapView.mapType = .mutedStandard
         mapView.delegate = self
         locationManager.delegate = self
-        loadBusesInMap("\(bus.cl)")
+                
+        loadBuses("\(bus.cl)")
+        showBuses()
+        
         configureLocationButton()
         requestUserLocationAuthorization()
+    }
+    
+    func loadBuses(_ codigoLinha: String) {
+        if !codigoLinha.isEmpty {
+            SPTransOlhoVivo.autenticar { (response) in
+                SPTransOlhoVivo.posicaoDosVeiculos(codigoLinha) { (buses) in
+                    var i = 0
+                    while i < buses.vs.count {
+                        self.addToMap(buses.vs[i])
+                        i+=1
+                    }
+                } onError: { (error) in
+                    print(error)
+                }
+            }
+        }
+    }
+    
+    func addToMap(_ bus: Location) {
+        let annotation = BusAnnotation(coordinate: bus.coordinate, type: .bus)
+        annotation.prefix = "Prefixo do veículo: \(bus.p)"
+        annotation.accessible = "Acessivel: \(bus.a == true ? "Sim" : "Não")"
+        mapView.addAnnotation(annotation)
+    }
+    
+    func showBuses() {
+        mapView.showAnnotations(mapView.annotations, animated: true)
     }
     
     func loadBusesInMap(_ termosBusca: String = "") {
         if !termosBusca.isEmpty {
             SPTransOlhoVivo.autenticar { (response) in
-                SPTransOlhoVivo.posicaoDosVeiculos(self.bus.cl, onComplete: { (busPositions) in
+                SPTransOlhoVivo.posicaoDosVeiculos(termosBusca, onComplete: { (busPositions) in
                     self.busPositions = busPositions
                     let count = self.busPositions!.vs.count
                     print(self.busPositions!.vs.count)
                     print("passei aqui")
                     var i = 0
                     while i < count {
-                        self.addToMap(self.busPositions!.vs[i])
+                        //self.addToMap(self.busPositions!.vs[i])
                         i+=1
                     }
                 }) { (error) in
@@ -71,13 +101,6 @@ class MapViewController: UIViewController {
         btUserLocation.layer.cornerRadius = 5
         btUserLocation.layer.borderWidth = 1
         btUserLocation.layer.borderColor = UIColor(named: "main")?.cgColor
-    }
-    
-    func addToMap(_ busPos: Location) {
-        let annotation = BusAnnotation(coordinate: busPos.coordinate, type: .bus)
-        annotation.prefix = "Prefixo do veículo: \(busPos.p)"
-        annotation.accessible = "Acessivel: \(busPos.a == true ? "Sim" : "Não")"
-        mapView.addAnnotation(annotation)
     }
     
     func showBus() {
@@ -156,6 +179,7 @@ extension MapViewController: MKMapViewDelegate {
     
 }
 
+// MARK: - CLLocationManagerDelegate
 extension MapViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         switch status {

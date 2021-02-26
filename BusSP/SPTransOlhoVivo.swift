@@ -86,7 +86,7 @@ class SPTransOlhoVivo {
         dataTask.resume()
     }
     
-    class func posicaoDosVeiculos(_ codigoLinha: Int, onComplete: @escaping (BusPosition) -> Void, onError: @escaping (BusError) -> Void) {
+    class func posicaoDosVeiculos(_ codigoLinha: String, onComplete: @escaping (BusPosition) -> Void, onError: @escaping (BusError) -> Void) {
         guard let url = URL(string: "\(basePath)/Posicao/Linha?codigoLinha=\(codigoLinha)") else {
             onError(.url)
             return
